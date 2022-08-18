@@ -4,9 +4,11 @@
     {
         public static void Main(String[] args)
         {
-            RegexClass regex = new RegexClass();
-            regex.ValidateFirstNameRegex("Bhagyashree");
-            
+            Registration registration = new Registration();
+            Console.WriteLine("Enter the First Name");
+            string fName = Console.ReadLine();
+            registration.checkfirstname(fName);
+
 
         }
     }
