@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,34 +7,37 @@ using System.Text.RegularExpressions;
 
 namespace UserRegistrationProblem
 {
-    public class RegexClass
+    internal class RegexClass
     {
-        public string firstName, lastName, emailId, phoneNumber, password;
-
-        public void regexClass()
+        public Regex FirstNameRegex = new Regex(@"^[A-Z]{1}[A-Za-z]{3,}?$");
+        public void ValidateFirstNameRegex(string FirstName)
         {
-            Console.WriteLine("\nEnter the first name");
-            this.firstName = Console.ReadLine();
-            while (!validateFirstName(this.firstName))
+            Console.WriteLine("\nFirstName:" + FirstName);
+            if (FirstNameRegex.IsMatch(FirstName))
             {
-                Console.WriteLine("Invalid First Name. Should start with an uppercase and contain minimum 3 characters");
-                Console.WriteLine("Re-enter First Name");
-                this.firstName = Console.ReadLine();
+                Console.WriteLine("valide");
             }
-            Console.WriteLine("Valid First Name");
-
-
-            Console.WriteLine("\nEnter the last name");
-            this.lastName = Console.ReadLine();
-            while (!validateLastName(this.lastName))
+            else
             {
-                Console.WriteLine("Invalid Last Name. Should start with an uppercase and contain minimum 3 characters");
-                Console.WriteLine("Re-enter Last Name");
-                this.lastName = Console.ReadLine();
-
+                Console.WriteLine("not valid");
             }
-            Console.WriteLine("Valid Last Name");
 
-           
+        }
+        public Regex LastNameRegex = new Regex(@"^[A-Z]{1}[A-Za-z]{3,}?$");
+        public void ValidateLastNameRegex(string LastName)
+        {
+            Console.WriteLine("\nLastName:" + LastName);
+            if (LastNameRegex.IsMatch(LastName))
+            {
+                Console.WriteLine("valide");
+            }
+            else
+            {
+                Console.WriteLine("not valid");
+            }
+
+
+        }
+
     }
 }

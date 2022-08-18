@@ -1,13 +1,13 @@
-namespace UserRegistrationProblem
+﻿namespace UserRegistrationProblem
 {
-    public class Program
+    class Program
     {
         public static void Main(String[] args)
         {
-            Console.WriteLine("Welcome to user registration problem");
+            RegexClass regex = new RegexClass();
+            regex.ValidateFirstNameRegex("Bhagyashree");
+            regex.ValidateLastNameRegex("Nemade");
 
-            RegexClass user = new RegexClass();
-            user.regexClass();
 
         }
     }
