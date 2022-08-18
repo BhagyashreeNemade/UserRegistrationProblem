@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,36 +7,34 @@ using System.Text.RegularExpressions;
 
 namespace UserRegistrationProblem
 {
-    internal class RegexClass
+    public class RegexClass
     {
-        public Regex FirstNameRegex = new Regex(@"^[A-Z]{1}[A-Za-z]{3,}?$");
-        public void ValidateFirstNameRegex(string FirstName)
+        public string firstName, lastName, emailId, phoneNumber, password;
+
+        public void regexClass()
         {
-            Console.WriteLine("\nFirstName:" + FirstName);
-            if (FirstNameRegex.IsMatch(FirstName))
+            Console.WriteLine("\nEnter the first name");
+            this.firstName = Console.ReadLine();
+            while (!validateFirstName(this.firstName))
             {
-                Console.WriteLine("valide");
+                Console.WriteLine("Invalid First Name. Should start with an uppercase and contain minimum 3 characters");
+                Console.WriteLine("Re-enter First Name");
+                this.firstName = Console.ReadLine();
             }
-            else
-            {
-                Console.WriteLine("not valid");
-            }
-
-        }
-        public Regex LastNameRegex = new Regex(@"^[A-Z]{1}[A-Za-z]{3,}?$");
-        public void ValidateLastNameRegex(string LastName)
-        {
-            Console.WriteLine("\nLastName:" + LastName);
-            if (LastNameRegex.IsMatch(LastName))
-            {
-                Console.WriteLine("valide");
-            }
-            else
-            {
-                Console.WriteLine("not valid");
-            }
+            Console.WriteLine("Valid First Name");
 
 
-        }
+            Console.WriteLine("\nEnter the last name");
+            this.lastName = Console.ReadLine();
+            while (!validateLastName(this.lastName))
+            {
+                Console.WriteLine("Invalid Last Name. Should start with an uppercase and contain minimum 3 characters");
+                Console.WriteLine("Re-enter Last Name");
+                this.lastName = Console.ReadLine();
+
+            }
+            Console.WriteLine("Valid Last Name");
+
+           
     }
 }
