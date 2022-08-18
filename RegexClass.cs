@@ -68,5 +68,21 @@ namespace UserRegistrationProblem
 
 
         }
+
+        public Regex PasswordRegex = new Regex(@"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$");
+        public void ValidatePasswordRegex(string Password)
+        {
+            Console.WriteLine("\nPassword:" + Password);
+            if (PasswordRegex.IsMatch(Password))
+            {
+                Console.WriteLine("valide");
+            }
+            else
+            {
+                Console.WriteLine("not valid");
+            }
+
+
+        }
     }
 }
