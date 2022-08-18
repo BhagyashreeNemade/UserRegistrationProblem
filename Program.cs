@@ -4,24 +4,33 @@
     {
         public static void Main(String[] args)
         {
-            RegexClass regex = new RegexClass();
-            regex.ValidateFirstNameRegex("Bhagyashree");
-            regex.ValidateLastNameRegex("Nemade");
-            string[] EmailList = { "abc@yohoo.com","abc-100@yohoo.com",
-                                    "abc.100@yahoo.com","abc111@abc.com","abc-100@abc.net",
-                                     "abc.100@abc.com.au", "abc@1.com","abc","abc@.com.my",
-                                    "abc123@gmail.a",
-                                     "abc1232.com"
-                                     ,".abc@abc.com","abc123.com.my", "abc123@.com.com","bhagyashreenemade2000@gmail.com"};
+            Registration registration = new Registration();
+            Console.WriteLine("Enter the First Name");
+            string fName = Console.ReadLine();
+            registration.checkfirstname(fName);
 
-            regex.ValidateEmailAddressRegex("b.nemade@rgit.com");
-            foreach (string SampleEmailAddress in EmailList)
-            {
-                regex.ValidateEmailAddressRegex(SampleEmailAddress);
-            }
-            regex.ValidatePhoneNumberRegex("91 7020794997");
-            regex.ValidatePasswordRegex("Bhagyashree@2000");
-            
+
+            Console.WriteLine("Enter the Last Name");
+            string lName = Console.ReadLine();
+            registration.checklastname(lName);
+
+            Console.WriteLine("Enter the Email Address");
+            string Email = Console.ReadLine();
+            registration.checkEmail(Email);
+
+            Console.WriteLine("Enter Mobile Number");
+            string mobile = Console.ReadLine();
+            registration.checkMobile(mobile);
+
+            Console.WriteLine("Enter the Password");
+            string password = Console.ReadLine();
+            registration.checkPassword(password);
+
+            Console.WriteLine("Enter Sample Email");
+            string mail = Console.ReadLine();
+            registration.SampleEmails(mail);
+
+
         }
     }
 }
