@@ -53,5 +53,20 @@ namespace UserRegistrationProblem
 
 
         }
+        public Regex PhoneNumberRegex = new Regex(@"^(91){1}[ ]+[0-9]{10}$");
+        public void ValidatePhoneNumberRegex(string PhoneNumber)
+        {
+            Console.WriteLine("\nphonenumber:" + PhoneNumber);
+            if (PhoneNumberRegex.IsMatch(PhoneNumber))
+            {
+                Console.WriteLine("valide");
+            }
+            else
+            {
+                Console.WriteLine("not valid");
+            }
+
+
+        }
     }
 }

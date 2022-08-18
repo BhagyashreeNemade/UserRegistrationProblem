@@ -19,6 +19,7 @@
             {
                 regex.ValidateEmailAddressRegex(SampleEmailAddress);
             }
+            regex.ValidatePhoneNumberRegex("91 7020794997");
         }
     }
 }
