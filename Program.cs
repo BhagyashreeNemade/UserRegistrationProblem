@@ -1,4 +1,4 @@
-namespace UserRegistrationProblem
+﻿namespace UserRegistrationProblem
 {
     public class Program
     {
