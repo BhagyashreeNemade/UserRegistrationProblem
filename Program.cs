@@ -5,7 +5,8 @@
         public static void Main(String[] args)
         {
             RegexClass regex = new RegexClass();
-            regex.ValidateFirstNameRegex("bhagyashree");
+            regex.ValidateFirstNameRegex("Bhagyashree");
+            regex.ValidateLastNameRegex("Nemade");
         }
     }
 }
