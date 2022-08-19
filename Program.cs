@@ -1,15 +1,34 @@
-﻿namespace UserRegistrationProblem
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UserRegistrationProblem
 {
-    class Program
+    internal class Program
     {
-        public static void Main(String[] args)
+        static void Main(string[] args)
         {
-            Registration registration = new Registration();
-            Console.WriteLine("Enter the First Name");
-            string fName = Console.ReadLine();
-            registration.checkfirstname(fName);
+            //Welcome Message
+            Console.WriteLine("----------------------------------------------------------------------");
+            Console.WriteLine("=-=-=-=-=-=-=-=Welcome To the User Registration Problem=-=-=-=-=-=-=-=");
+            Console.WriteLine("----------------------------------------------------------------------");
+
+            //object created
+            UserRegistrationValidation validate = new UserRegistrationValidation();
+
+            Console.WriteLine("Enter First Name : ");
+            string firstName = Console.ReadLine();
+            bool fNameResult = validate.ValidateFirstName(firstName);
+            validate.PrintResult(fNameResult);
 
 
+           
+           
+            Console.WriteLine("--------------------------------------");
+
+            
         }
     }
 }
